@@ -41,13 +41,13 @@ export function ProblemSection() {
           className="sticky top-0 h-screen flex flex-col"
           style={{ paddingTop: '120px', paddingBottom: '80px' }}
         >
-          <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex-1 flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 flex-1 flex items-center">
             {/* Two-column layout: Text on left, Cards on right */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 w-full items-center">
               {/* Left: Text Content */}
-              <div className="flex flex-col justify-center space-y-6">
+              <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-center lg:text-left">
                 <h2
-                  className="text-[48px] md:text-[64px] font-semibold leading-tight"
+                  className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] font-semibold leading-tight"
                   style={{
                     fontFamily: 'var(--font-comfortaa)',
                     color: 'var(--color-text-primary)',
@@ -56,7 +56,7 @@ export function ProblemSection() {
                   Most learning struggles go unseen.
                 </h2>
                 <p
-                  className="text-xl leading-relaxed"
+                  className="text-base sm:text-lg lg:text-xl leading-relaxed"
                   style={{
                     fontFamily: 'var(--font-nunito)',
                     color: 'var(--color-text-secondary)',
@@ -67,10 +67,15 @@ export function ProblemSection() {
               </div>
 
               {/* Right: Card Stack - Large and subtly off to the right */}
-              <div className="relative flex items-center justify-end overflow-visible">
+              <div className="relative flex items-center justify-center lg:justify-end overflow-hidden lg:overflow-visible">
                 <div
-                  className="relative translate-x-6 md:translate-x-16"
-                  style={{ width: '560px', height: '360px' }}
+                  className="relative translate-x-0 lg:translate-x-6 xl:translate-x-16 scale-75 sm:scale-90 lg:scale-100"
+                  style={{ 
+                    width: 'min(100%, 560px)', 
+                    height: 'min(360px, calc(100vw * 0.64))',
+                    maxWidth: '560px',
+                    maxHeight: '360px',
+                  }}
                 >
                   <CardSwap
                     width={560}
@@ -88,9 +93,9 @@ export function ProblemSection() {
                         key={card.id}
                         customClass="bg-black/90 border-white/10 shadow-[0_24px_70px_rgba(15,23,42,0.8)]"
                       >
-                        <div className="flex h-full w-full items-center justify-center px-10 py-8">
+                        <div className="flex h-full w-full items-center justify-center px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8">
                           <p
-                            className="text-lg leading-relaxed text-center whitespace-pre-line"
+                            className="text-sm sm:text-base lg:text-lg leading-relaxed text-center whitespace-pre-line"
                             style={{
                               fontFamily: 'var(--font-nunito)',
                               color: 'rgba(255,255,255,0.92)',

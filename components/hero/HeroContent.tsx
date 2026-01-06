@@ -11,7 +11,7 @@ export function HeroContent() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-          className="text-[52px] md:text-[64px] font-semibold leading-tight tracking-tight max-w-3xl"
+          className="text-[36px] sm:text-[44px] md:text-[52px] lg:text-[64px] font-semibold leading-tight tracking-tight max-w-3xl"
           style={{
             fontFamily: 'var(--font-comfortaa)',
             color: 'var(--color-text-primary)',
@@ -65,7 +65,7 @@ export function HeroContent() {
 
         {/* Supporting Line */}
         <p
-          className="text-sm leading-relaxed max-w-xl"
+          className="text-xs sm:text-sm leading-relaxed max-w-xl px-4"
           style={{
             fontFamily: 'var(--font-nunito)',
             color: 'var(--color-text-muted)',
