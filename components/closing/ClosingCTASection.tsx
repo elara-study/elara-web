@@ -4,7 +4,7 @@ import { VisualAccent } from '@/components/visual/VisualAccent';
 
 export function ClosingCTASection() {
   return (
-    <section id="closing-cta" className="py-32 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-main)' }}>
+    <section id="closing-cta" className="py-32 px-6 relative overflow-hidden">
       <VisualAccent position="center" variant="blob" color="secondary" />
       <VisualAccent position="left" variant="circle" color="primary" />
       <div className="max-w-5xl mx-auto relative z-10">

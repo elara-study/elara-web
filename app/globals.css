@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   /* Elara Color Palette - Light Mode Only */
@@ -11,17 +14,321 @@
   --color-brand-primary: #4D6A8A;
   --color-brand-primary-hover: #3F5770;
   --color-brand-secondary: #E86B42;
-}
-
-@theme inline {
-  --color-background: var(--color-background-main);
-  --color-foreground: var(--color-text-primary);
-  --font-sans: var(--font-nunito);
-  --font-headline: var(--font-comfortaa);
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
 body {
-  background: var(--color-background-main);
+  background: transparent;
   color: var(--color-text-primary);
   font-family: var(--font-nunito), sans-serif;
+}
+
+/* Hero card-style background pattern */
+.hero-card-pattern {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  --color-0: #ffffff;
+  --color-1: #111111;
+  --color-2: #222222;
+  --color-3: #333333;
+  --color-4: #2e2e2e;
+  --color-5: #d2b48c;
+  --color-6: #b22222;
+  --color-7: #871a1a;
+  --color-8: #ff6347;
+  --color-9: #ff3814;
+  background-color: var(--color-1);
+  background-image: linear-gradient(
+      to top,
+      var(--color-2) 5%,
+      var(--color-1) 6%,
+      var(--color-1) 7%,
+      transparent 7%
+    ),
+    linear-gradient(to bottom, var(--color-1) 30%, transparent 80%),
+    linear-gradient(to right, var(--color-2), var(--color-4) 5%, transparent 5%),
+    linear-gradient(
+      to right,
+      transparent 6%,
+      var(--color-2) 6%,
+      var(--color-4) 9%,
+      transparent 9%
+    ),
+    linear-gradient(
+      to right,
+      transparent 27%,
+      var(--color-2) 27%,
+      var(--color-4) 34%,
+      transparent 34%
+    ),
+    linear-gradient(
+      to right,
+      transparent 51%,
+      var(--color-2) 51%,
+      var(--color-4) 57%,
+      transparent 57%
+    ),
+    linear-gradient(to bottom, var(--color-1) 35%, transparent 35%),
+    linear-gradient(
+      to right,
+      transparent 42%,
+      var(--color-2) 42%,
+      var(--color-4) 44%,
+      transparent 44%
+    ),
+    linear-gradient(
+      to right,
+      transparent 45%,
+      var(--color-2) 45%,
+      var(--color-4) 47%,
+      transparent 47%
+    ),
+    linear-gradient(
+      to right,
+      transparent 48%,
+      var(--color-2) 48%,
+      var(--color-4) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      to right,
+      transparent 87%,
+      var(--color-2) 87%,
+      var(--color-4) 91%,
+      transparent 91%
+    ),
+    linear-gradient(to bottom, var(--color-1) 37.5%, transparent 37.5%),
+    linear-gradient(
+      to right,
+      transparent 14%,
+      var(--color-2) 14%,
+      var(--color-4) 20%,
+      transparent 20%
+    ),
+    linear-gradient(to bottom, var(--color-1) 40%, transparent 40%),
+    linear-gradient(
+      to right,
+      transparent 10%,
+      var(--color-2) 10%,
+      var(--color-4) 13%,
+      transparent 13%
+    ),
+    linear-gradient(
+      to right,
+      transparent 21%,
+      var(--color-2) 21%,
+      #1a1a1a 25%,
+      transparent 25%
+    ),
+    linear-gradient(
+      to right,
+      transparent 58%,
+      var(--color-2) 58%,
+      var(--color-4) 64%,
+      transparent 64%
+    ),
+    linear-gradient(
+      to right,
+      transparent 92%,
+      var(--color-2) 92%,
+      var(--color-4) 95%,
+      transparent 95%
+    );
+  background-size: 300px 150px;
+  background-position: center bottom;
+}
+
+.hero-card-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-1);
+  background-image: linear-gradient(
+      to top,
+      var(--color-5) 5%,
+      var(--color-1) 6%,
+      var(--color-1) 7%,
+      transparent 7%
+    ),
+    linear-gradient(to bottom, var(--color-1) 30%, transparent 30%),
+    linear-gradient(to right, var(--color-6), var(--color-7) 5%, transparent 5%),
+    linear-gradient(
+      to right,
+      transparent 6%,
+      var(--color-8) 6%,
+      var(--color-9) 9%,
+      transparent 9%
+    );
+  background-size: 300px 150px;
+  background-position: center bottom;
+  clip-path: circle(150px at center center);
+  animation: hero-flashlight 20s ease infinite;
+}
+
+.hero-card-pattern::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 10px;
+  left: calc(50% + 59px);
+  bottom: 100px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle, #fff 50%, transparent 50%),
+    radial-gradient(circle, #fff 50%, transparent 50%);
+  background-size: 10px 10px;
+  background-position: left center, right center;
+  animation: hero-eyes 20s infinite;
+}
+
+@keyframes hero-flashlight {
+  0% {
+    clip-path: circle(150px at -25% 10%);
+  }
+  38% {
+    clip-path: circle(150px at 60% 20%);
+  }
+  64% {
+    clip-path: circle(150px at 45% 78%);
+  }
+  100% {
+    clip-path: circle(150px at 150% 50%);
+  }
+}
+
+@keyframes hero-eyes {
+  0%,
+  38% {
+    opacity: 0;
+  }
+  39%,
+  41% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  40% {
+    transform: scaleY(0);
+  }
+  42%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+/* Base element defaults (avoid Tailwind-specific @apply so CSS parses everywhere) */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    color: var(--foreground);
+  }
 }

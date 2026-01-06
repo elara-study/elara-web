@@ -5,7 +5,7 @@ import { VisualAccent } from '@/components/visual/VisualAccent';
 
 export function StudentMomentSection() {
   return (
-    <section id="student-moment" className="py-24 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-main)' }}>
+    <section id="student-moment" className="py-24 px-6 relative overflow-hidden">
       <VisualAccent position="right" variant="blob" color="primary" />
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="space-y-12">

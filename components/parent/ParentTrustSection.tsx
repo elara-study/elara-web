@@ -5,7 +5,7 @@ import { VisualAccent } from '@/components/visual/VisualAccent';
 
 export function ParentTrustSection() {
   return (
-    <section id="parent-trust" className="py-24 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-card)' }}>
+    <section id="parent-trust" className="py-24 px-6 relative overflow-hidden">
       <VisualAccent position="left" variant="blob" color="primary" />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="space-y-12">

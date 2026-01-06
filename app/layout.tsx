@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Comfortaa, Nunito } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar/Navbar";
+import { GlobalBackground } from "@/components/GlobalBackground";
 
 const comfortaa = Comfortaa({
   variable: "--font-comfortaa",
@@ -30,8 +31,11 @@ export default function RootLayout({
       <body
         className={`${comfortaa.variable} ${nunito.variable} antialiased`}
       >
+        <GlobalBackground />
         <Navbar />
-        {children}
+        <main className="relative z-10">
+          {children}
+        </main>
       </body>
     </html>
   );

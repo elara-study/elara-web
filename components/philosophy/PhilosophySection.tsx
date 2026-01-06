@@ -5,7 +5,7 @@ import { VisualAccent } from '@/components/visual/VisualAccent';
 
 export function PhilosophySection() {
   return (
-    <section id="philosophy" className="py-24 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-card)' }}>
+    <section id="philosophy" className="py-24 px-6 relative overflow-hidden">
       <VisualAccent position="right" variant="circle" color="secondary" />
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="space-y-12">
