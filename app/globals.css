@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  /* Elara Color Palette - Light Mode Only */
+  --color-background-main: #F8FAFC;
+  --color-background-card: #F1F5F9;
+  --color-divider: #E2E8F0;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-brand-primary: #4D6A8A;
+  --color-brand-primary-hover: #3F5770;
+  --color-brand-secondary: #E86B42;
+}
+
+@theme inline {
+  --color-background: var(--color-background-main);
+  --color-foreground: var(--color-text-primary);
+  --font-sans: var(--font-nunito);
+  --font-headline: var(--font-comfortaa);
+}
+
+body {
+  background: var(--color-background-main);
+  color: var(--color-text-primary);
+  font-family: var(--font-nunito), sans-serif;
+}
