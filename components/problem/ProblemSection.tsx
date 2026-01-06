@@ -41,50 +41,69 @@ export function ProblemSection() {
           className="sticky top-0 h-screen flex flex-col"
           style={{ paddingTop: '120px', paddingBottom: '80px' }}
         >
-          <div className="max-w-4xl mx-auto px-6 w-full relative z-10 flex-1 flex flex-col">
-            {/* Static Centered Headline */}
-            <h2
-              className="text-[36px] font-semibold leading-tight text-center mb-20"
-              style={{
-                fontFamily: 'var(--font-comfortaa)',
-                color: 'var(--color-text-primary)',
-              }}
-            >
-              Most learning struggles go unseen.
-            </h2>
+          <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex-1 flex items-center">
+            {/* Two-column layout: Text on left, Cards on right */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center">
+              {/* Left: Text Content */}
+              <div className="flex flex-col justify-center space-y-6">
+                <h2
+                  className="text-[48px] md:text-[64px] font-semibold leading-tight"
+                  style={{
+                    fontFamily: 'var(--font-comfortaa)',
+                    color: 'var(--color-text-primary)',
+                  }}
+                >
+                  Most learning struggles go unseen.
+                </h2>
+                <p
+                  className="text-xl leading-relaxed"
+                  style={{
+                    fontFamily: 'var(--font-nunito)',
+                    color: 'var(--color-text-secondary)',
+                  }}
+                >
+                  Just look at it go!
+                </p>
+              </div>
 
-            {/* New card deck style using CardSwap */}
-            <div className="relative w-full flex items-center justify-center flex-1">
-              <CardSwap
-                width={440}
-                height={260}
-                cardDistance={70}
-                verticalDistance={40}
-                delay={5000}
-                skewAmount={0}
-                easing="linear"
-                pauseOnHover
-                isActive={isInView}
-              >
-                {cardData.map((card) => (
-                  <Card
-                    key={card.id}
-                    customClass="bg-black/90 border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.55)]"
+              {/* Right: Card Stack - Large and subtly off to the right */}
+              <div className="relative flex items-center justify-end overflow-visible">
+                <div
+                  className="relative translate-x-6 md:translate-x-16"
+                  style={{ width: '560px', height: '360px' }}
+                >
+                  <CardSwap
+                    width={560}
+                    height={360}
+                    cardDistance={80}
+                    verticalDistance={50}
+                    delay={5000}
+                    skewAmount={0}
+                    easing="linear"
+                    pauseOnHover
+                    isActive={isInView}
                   >
-                    <div className="flex h-full w-full items-center justify-center px-8 py-6">
-                      <p
-                        className="text-base leading-relaxed text-center whitespace-pre-line"
-                        style={{
-                          fontFamily: 'var(--font-nunito)',
-                          color: 'rgba(255,255,255,0.92)',
-                        }}
+                    {cardData.map((card) => (
+                      <Card
+                        key={card.id}
+                        customClass="bg-black/90 border-white/10 shadow-[0_24px_70px_rgba(15,23,42,0.8)]"
                       >
-                        {card.text}
-                      </p>
-                    </div>
-                  </Card>
-                ))}
-              </CardSwap>
+                        <div className="flex h-full w-full items-center justify-center px-10 py-8">
+                          <p
+                            className="text-lg leading-relaxed text-center whitespace-pre-line"
+                            style={{
+                              fontFamily: 'var(--font-nunito)',
+                              color: 'rgba(255,255,255,0.92)',
+                            }}
+                          >
+                            {card.text}
+                          </p>
+                        </div>
+                      </Card>
+                    ))}
+                  </CardSwap>
+                </div>
+              </div>
             </div>
           </div>
         </div>
