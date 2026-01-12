@@ -54,6 +54,75 @@ body {
   font-family: var(--font-nunito), sans-serif;
 }
 
+/* Shared glass / flow motif used across Figma-aligned screens */
+.bg-glass-surface {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), rgba(241, 245, 249, 0.92));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.bg-flow-hero {
+  position: relative;
+  background: linear-gradient(to bottom, #e0f2fe 0%, #ffffff 100%);
+}
+
+.bg-flow-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 30% 35%, rgba(147, 197, 253, 0.35) 0%, transparent 55%),
+    radial-gradient(circle at 70% 65%, rgba(191, 219, 254, 0.45) 0%, transparent 55%);
+}
+
+.bg-flow-section {
+  position: relative;
+  background: radial-gradient(circle at top, rgba(226, 232, 240, 0.5), #f8fafc 60%);
+}
+
+.bg-flow-class-pulse {
+  background: linear-gradient(to right, rgba(147, 197, 253, 0.2) 0%, transparent 50%);
+  height: 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-flow-class-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 20px,
+    rgba(147, 197, 253, 0.12) 20px,
+    rgba(147, 197, 253, 0.12) 22px
+  );
+  animation: wave-flow 18s linear infinite;
+}
+
+.bg-flow-growth {
+  background: linear-gradient(
+    to right,
+    #3b82f6 0%,
+    #10b981 25%,
+    #fbbf24 50%,
+    #f97316 75%,
+    #a855f7 100%
+  );
+  border-radius: 999px;
+  filter: blur(12px);
+  opacity: 0.4;
+}
+
+@keyframes wave-flow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(120px);
+  }
+}
+
 /* Hero card-style background pattern */
 .hero-card-pattern {
   position: relative;
