@@ -1,53 +1,48 @@
 'use client';
 
-import PillNav, { PillNavItem } from './PillNav';
+import Link from 'next/link';
 
 export function Navbar() {
-  const navItems: PillNavItem[] = [
-    {
-      label: 'Home',
-      href: '/',
-      ariaLabel: 'Go to home page',
-    },
-    {
-      label: 'Students',
-      href: '/students',
-      ariaLabel: 'Go to Students page',
-    },
-    {
-      label: 'Teachers',
-      href: '/teachers',
-      ariaLabel: 'Go to Teachers page',
-    },
-    {
-      label: 'Parents',
-      href: '/parents',
-      ariaLabel: 'Go to Parents page',
-    },
+  const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Students', href: '/students' },
+    { label: 'Teachers', href: '/teachers' },
+    { label: 'Parents', href: '/parents' },
   ];
 
   return (
-    <PillNav
-      logo={
-        <span
-          className="text-xl font-semibold"
-          style={{
-            fontFamily: 'var(--font-comfortaa)',
-            color: '#FFFFFF',
-          }}
-        >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border border-gray-200 rounded-b-[12px] shadow-lg px-0 py-[14px]">
+      <div className="flex items-center justify-between max-w-7xl mx-auto px-8">
+        <Link href="/" className="text-xl font-semibold" style={{ fontFamily: 'var(--font-comfortaa)', color: 'var(--color-text-primary)' }}>
           elara
-        </span>
-      }
-      items={navItems}
-      className="backdrop-blur-xl bg-gradient-to-r from-[#4D6A8A] to-[#5A7A9A] border border-[#3F5770]/30 rounded-[35px] shadow-xl px-[9px] py-2"
-      baseColor="#4D6A8A"
-      pillColor="#FFFFFF"
-      hoveredPillTextColor="#FFFFFF"
-      pillTextColor="#0F172A"
-      ease="power3.easeOut"
-      initialLoadAnimation={true}
-    />
+        </Link>
+        <ul className="flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="text-sm font-medium hover:opacity-70 transition-opacity"
+                style={{ fontFamily: 'var(--font-nunito)', color: 'var(--color-text-secondary)' }}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Link
+          href="/get-started"
+          className="px-5 py-2 text-white text-sm font-medium rounded-lg transition-colors"
+          style={{ 
+            fontFamily: 'var(--font-nunito)',
+            backgroundColor: '#4d6a8a'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#3f5770'}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#4d6a8a'}
+        >
+          Get Started
+        </Link>
+      </div>
+    </nav>
   );
 }
 

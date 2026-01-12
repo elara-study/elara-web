@@ -32,7 +32,7 @@ export function PerspectivesSection() {
   };
 
   return (
-    <section id="perspectives" className="py-24 px-6 relative overflow-hidden">
+    <section id="perspectives" className="py-24 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-main)' }}>
       <BackgroundFlow variant="section" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="space-y-12">

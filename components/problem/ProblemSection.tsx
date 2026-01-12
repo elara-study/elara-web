@@ -50,7 +50,7 @@ export function ProblemSection() {
   ];
 
   return (
-    <section id="problem" className="relative py-32 px-6 overflow-hidden">
+    <section id="problem" className="relative py-32 px-6 overflow-hidden" style={{ backgroundColor: 'var(--color-background-main)' }}>
       <VisualAccent position="left" variant="blob" color="primary" />
       
       <div className="max-w-7xl mx-auto relative z-10">

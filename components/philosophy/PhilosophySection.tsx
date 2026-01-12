@@ -57,7 +57,7 @@ export function PhilosophySection() {
   ];
 
   return (
-    <section id="philosophy" className="py-32 px-6 relative overflow-hidden">
+    <section id="philosophy" className="py-32 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-card)' }}>
       <VisualAccent position="right" variant="circle" color="secondary" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="space-y-12">
@@ -76,7 +76,7 @@ export function PhilosophySection() {
             Learning grows through thinking, not answers.
           </motion.h2>
 
-          {/* Grid Layout with Dark Theme */}
+          {/* Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {philosophyItems.map((item, index) => {
               // Explicit positioning: 3 items on left, 1 tall item in center, 3 items on right
@@ -116,8 +116,8 @@ export function PhilosophySection() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`rounded-2xl border shadow-sm p-6 md:p-8 flex flex-col hover:shadow-md transition-all ${isCenterCard ? 'justify-center items-center text-center' : 'justify-between'} ${gridClasses}`}
                   style={{
-                    backgroundColor: '#1E293B', // neutral.800
-                    borderColor: '#334155', // neutral.700
+                    backgroundColor: '#FFFFFF', // white
+                    borderColor: '#E2E8F0', // neutral.200 - divider
                   }}
                 >
                   <div className={`space-y-3 ${isCenterCard ? 'w-full' : ''}`}>
@@ -125,7 +125,7 @@ export function PhilosophySection() {
                       className={isCenterCard ? 'text-2xl md:text-3xl lg:text-4xl font-semibold' : 'text-xl md:text-2xl font-semibold'}
                       style={{
                         fontFamily: 'var(--font-comfortaa)',
-                        color: '#F8FAFC', // neutral.50 - text primary
+                        color: 'var(--color-text-primary)', // text primary
                       }}
                     >
                       {item.title}
@@ -135,7 +135,7 @@ export function PhilosophySection() {
                         className={isCenterCard ? 'text-base md:text-lg font-medium' : 'text-sm md:text-base font-medium'}
                         style={{
                           fontFamily: 'var(--font-nunito)',
-                          color: '#CBD5E1', // neutral.300 - text secondary
+                          color: 'var(--color-text-secondary)', // text secondary
                         }}
                       >
                         {item.subtitle}
@@ -146,7 +146,7 @@ export function PhilosophySection() {
                     className={isCenterCard ? 'text-lg md:text-xl lg:text-2xl leading-relaxed mt-4' : 'text-base md:text-lg leading-relaxed mt-4'}
                     style={{
                       fontFamily: 'var(--font-nunito)',
-                      color: '#CBD5E1', // neutral.300 - text secondary
+                      color: 'var(--color-text-secondary)', // text secondary
                     }}
                   >
                     {item.text}

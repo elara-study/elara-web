@@ -93,7 +93,7 @@ export function HeroContent() {
           className="text-xs sm:text-sm leading-relaxed max-w-xl px-4"
           style={{
             fontFamily: 'var(--font-nunito)',
-            color: 'var(--color-text-muted)',
+            color: 'var(--color-text-secondary)',
           }}
         >
           We&apos;re building a new way to support learning — one that listens,

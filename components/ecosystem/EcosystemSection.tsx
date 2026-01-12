@@ -7,7 +7,7 @@ import ecosystemSvg from '@/assets/ecosystem.svg';
 export function EcosystemSection() {
 
   return (
-    <section id="ecosystem" className="py-24 px-6 relative overflow-hidden">
+    <section id="ecosystem" className="py-24 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-card)' }}>
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="space-y-16">
           <h2
