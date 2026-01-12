@@ -1,12 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { VisualAccent } from '@/components/visual/VisualAccent';
+import { BackgroundFlow } from '@/components/BackgroundFlow';
+import { GlassSystemStage } from '@/components/GlassSystemStage';
 
 export function ParentTrustSection() {
   return (
     <section id="parent-trust" className="py-24 px-6 relative overflow-hidden">
-      <VisualAccent position="left" variant="blob" color="primary" />
+      <BackgroundFlow variant="section" />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="space-y-12">
           <h2
@@ -20,13 +21,7 @@ export function ParentTrustSection() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div
-              className="p-8 rounded-lg"
-              style={{
-                backgroundColor: 'var(--color-background-main)',
-                border: '1px solid var(--color-divider)',
-              }}
-            >
+            <GlassSystemStage size="md" className="p-8">
               <h3
                 className="text-xl font-semibold mb-4"
                 style={{
@@ -43,17 +38,11 @@ export function ParentTrustSection() {
                   color: 'var(--color-text-secondary)',
                 }}
               >
-                Parents want to support their children — but grades alone don't tell the full story.
+                Parents want to support their children — but grades alone don&apos;t tell the full story.
               </p>
-            </div>
+            </GlassSystemStage>
 
-            <div
-              className="p-8 rounded-lg"
-              style={{
-                backgroundColor: 'var(--color-background-main)',
-                border: '1px solid var(--color-divider)',
-              }}
-            >
+            <GlassSystemStage size="md" className="p-8">
               <h3
                 className="text-xl font-semibold mb-4"
                 style={{
@@ -97,7 +86,7 @@ export function ParentTrustSection() {
               >
                 These insights are generated with intelligence and validated by teachers — combining clarity with human judgment.
               </p>
-            </div>
+            </GlassSystemStage>
           </div>
 
           <p

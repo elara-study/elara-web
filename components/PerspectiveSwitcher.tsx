@@ -29,9 +29,10 @@ export function PerspectiveSwitcher({
 }: PerspectiveSwitcherProps) {
   return (
     <div
-      className={`relative inline-flex items-center rounded-full bg-white/60 border border-white/50 shadow-md px-1 ${sizeClasses[size]} ${className}`}
+      className={`relative inline-flex items-center rounded-full bg-white/60 border shadow-md px-1 ${sizeClasses[size]} ${className}`}
       style={{
         backdropFilter: 'blur(18px)',
+        borderColor: 'rgba(255, 255, 255, 0.7)',
       }}
     >
       {OPTIONS.map((option) => {

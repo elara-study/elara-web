@@ -1,13 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { VisualAccent } from '@/components/visual/VisualAccent';
+import Image from 'next/image';
+import ecosystemSvg from '@/assets/ecosystem.svg';
 
 export function EcosystemSection() {
+
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
-      <VisualAccent position="center" variant="blob" color="primary" />
-      <VisualAccent position="left" variant="circle" color="secondary" />
+    <section id="ecosystem" className="py-24 px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="space-y-16">
           <h2
@@ -20,150 +20,39 @@ export function EcosystemSection() {
             Learning works best when everyone is connected.
           </h2>
 
-          <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-8">
-              <div
-                className="p-6 rounded-lg text-center"
-                style={{
-                  backgroundColor: 'var(--color-background-main)',
-                  border: '1px solid var(--color-divider)',
-                }}
-              >
-                <h3
-                  className="text-xl font-semibold mb-3"
-                  style={{
-                    fontFamily: 'var(--font-comfortaa)',
-                    color: 'var(--color-text-primary)',
-                  }}
-                >
-                  Student
-                </h3>
-                <p
-                  className="text-base leading-relaxed"
-                  style={{
-                    fontFamily: 'var(--font-nunito)',
-                    color: 'var(--color-text-secondary)',
-                  }}
-                >
-                  Students learn by thinking.
-                </p>
-              </div>
-
-              <div
-                className="p-8 rounded-lg text-center order-first md:order-none"
-                style={{
-                  backgroundColor: 'var(--color-background-main)',
-                  border: '2px solid var(--color-brand-primary)',
-                }}
-              >
-                <h3
-                  className="text-2xl font-semibold mb-4"
-                  style={{
-                    fontFamily: 'var(--font-comfortaa)',
-                    color: 'var(--color-text-primary)',
-                  }}
-                >
-                  Elara
-                </h3>
-                <p
-                  className="text-base leading-relaxed"
-                  style={{
-                    fontFamily: 'var(--font-nunito)',
-                    color: 'var(--color-text-secondary)',
-                  }}
-                >
-                  Elara sits at the center — listening, connecting, and translating learning into shared insight.
-                </p>
-              </div>
-
-              <div
-                className="p-6 rounded-lg text-center"
-                style={{
-                  backgroundColor: 'var(--color-background-main)',
-                  border: '1px solid var(--color-divider)',
-                }}
-              >
-                <h3
-                  className="text-xl font-semibold mb-3"
-                  style={{
-                    fontFamily: 'var(--font-comfortaa)',
-                    color: 'var(--color-text-primary)',
-                  }}
-                >
-                  Teacher
-                </h3>
-                <p
-                  className="text-base leading-relaxed"
-                  style={{
-                    fontFamily: 'var(--font-nunito)',
-                    color: 'var(--color-text-secondary)',
-                  }}
-                >
-                  Teachers guide with clarity.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex justify-center">
-              <div
-                className="p-6 rounded-lg text-center max-w-xs"
-                style={{
-                  backgroundColor: 'var(--color-background-main)',
-                  border: '1px solid var(--color-divider)',
-                }}
-              >
-                <h3
-                  className="text-xl font-semibold mb-3"
-                  style={{
-                    fontFamily: 'var(--font-comfortaa)',
-                    color: 'var(--color-text-primary)',
-                  }}
-                >
-                  Parent
-                </h3>
-                <p
-                  className="text-base leading-relaxed"
-                  style={{
-                    fontFamily: 'var(--font-nunito)',
-                    color: 'var(--color-text-secondary)',
-                  }}
-                >
-                  Parents support with understanding.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="p-6 rounded-lg text-center max-w-3xl mx-auto"
-            style={{
-              backgroundColor: 'var(--color-background-main)',
-              border: '1px solid var(--color-divider)',
-            }}
+          {/* Ecosystem Visualization */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            className="relative w-full flex justify-center"
           >
-            <p
-              className="text-base leading-relaxed"
-              style={{
-                fontFamily: 'var(--font-nunito)',
-                color: 'var(--color-text-secondary)',
-              }}
-            >
-              No one is replaced. No role is diminished. Each part of the learning journey strengthens the others.
-            </p>
-          </div>
+            <div className="relative w-full max-w-5xl">
+              <Image
+                src={ecosystemSvg}
+                alt="Elara Ecosystem - Connecting Students, Teachers, and Parents"
+                width={1200}
+                height={500}
+                className="w-full h-auto"
+                style={{ height: '430px' }}
+                priority
+              />
+            </div>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className="text-xl leading-relaxed pt-4 text-center"
+            className="text-xl leading-relaxed pt-4 text-center max-w-3xl mx-auto"
             style={{
               fontFamily: 'var(--font-nunito)',
               color: 'var(--color-text-primary)',
             }}
           >
-            Connected learning moves everyone forward — toward what's possible.
+            No one is replaced. No role is diminished. Each part of the learning journey strengthens the others.
           </motion.p>
         </div>
       </div>

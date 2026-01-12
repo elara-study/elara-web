@@ -90,34 +90,51 @@ export function PathVisualization({
 
   if (variant === 'class-pulse-wave') {
     return (
-      <div className={`relative w-full overflow-hidden rounded-3xl ${className}`}>
-        <div className="bg-flow-class-pulse" />
+      <div className={`relative w-full overflow-hidden rounded-2xl bg-gradient-to-b from-sky-50/50 to-white ${className}`} style={{ minHeight: '140px' }}>
         <svg
-          className="absolute inset-0 h-full w-full"
-          viewBox="0 0 640 180"
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 600 140"
+          preserveAspectRatio="xMidYMid meet"
           aria-hidden="true"
         >
-          {/* Multi-layered waves approximate the Figma Class Pulse motif */}
+          <defs>
+            <linearGradient id="waveGradientPrimary" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#93C5FD" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.4" />
+            </linearGradient>
+            <linearGradient id="waveGradientSecondary" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#DBEAFE" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="#BFDBFE" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#93C5FD" stopOpacity="0.3" />
+            </linearGradient>
+            <linearGradient id="waveGradientTertiary" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#EFF6FF" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="#DBEAFE" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          
+          {/* Background subtle gradient */}
+          <rect width="600" height="140" fill="url(#waveGradientTertiary)" />
+          
+          {/* Main wave layers - smoother, cleaner curves */}
           <path
-            d="M0 120 Q80 80 160 100 T320 110 T480 90 T640 110 V180 H0 Z"
+            d="M0 100 Q150 60 300 80 T600 70 L600 140 L0 140 Z"
             fill="url(#waveGradientPrimary)"
-            opacity="0.7"
+            opacity="0.8"
           />
           <path
-            d="M0 130 Q80 90 160 110 T320 120 T480 100 T640 120 V180 H0 Z"
+            d="M0 110 Q150 70 300 90 T600 80 L600 140 L0 140 Z"
             fill="url(#waveGradientSecondary)"
             opacity="0.6"
           />
-          <defs>
-            <linearGradient id="waveGradientPrimary" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stopColor="#BFDBFE" />
-              <stop offset="1" stopColor="#60A5FA" />
-            </linearGradient>
-            <linearGradient id="waveGradientSecondary" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stopColor="#DBEAFE" />
-              <stop offset="1" stopColor="#93C5FD" />
-            </linearGradient>
-          </defs>
+          
+          {/* Additional subtle wave for depth */}
+          <path
+            d="M0 105 Q200 65 400 85 T600 75 L600 140 L0 140 Z"
+            fill="url(#waveGradientSecondary)"
+            opacity="0.4"
+          />
         </svg>
       </div>
     );
@@ -185,8 +202,8 @@ export function PathVisualization({
     >
       <div className="relative h-56 w-56 md:h-64 md:w-64">
         <div className="absolute inset-10 rounded-full border border-sky-100" />
-        <div className="absolute inset-5 rounded-full border border-sky-100/80" />
-        <div className="absolute inset-0 rounded-full border border-sky-100/50" />
+        <div className="absolute inset-5 rounded-full border" style={{ borderColor: 'rgba(219, 234, 254, 0.9)' }} />
+        <div className="absolute inset-0 rounded-full border" style={{ borderColor: 'rgba(219, 234, 254, 0.6)' }} />
 
         <div className="absolute inset-14 rounded-full bg-white shadow-[0_18px_45px_rgba(148,163,184,0.45)] flex items-center justify-center">
           <span

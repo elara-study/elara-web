@@ -44,8 +44,11 @@ export function InsightCard({
 
   return (
     <div
-      className={`flex items-center gap-3 rounded-2xl bg-white/80 border border-white/60 shadow-sm px-4 py-3 md:px-5 md:py-4 ${className}`}
-      style={{ backdropFilter: 'blur(16px)' }}
+      className={`flex items-start gap-3 rounded-2xl bg-white/80 border shadow-sm px-4 py-3 md:px-5 md:py-4 ${className}`}
+      style={{ 
+        backdropFilter: 'blur(16px)',
+        borderColor: 'rgba(255, 255, 255, 0.8)',
+      }}
     >
       <div
         className="flex h-9 w-9 items-center justify-center rounded-xl text-xs font-semibold text-white shrink-0"

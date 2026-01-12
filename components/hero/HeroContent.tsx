@@ -20,14 +20,35 @@ export function HeroContent() {
           Learning should never lose its way.
         </motion.h1>
 
+        {/* Subheadline */}
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
+          className="text-lg sm:text-xl md:text-2xl leading-relaxed max-w-2xl px-4"
+          style={{
+            fontFamily: 'var(--font-nunito)',
+            color: 'var(--color-text-secondary)',
+          }}
+        >
+          When students struggle in silence, confidence fades.<br />
+          When understanding becomes visible, growth follows.
+        </motion.p>
+
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
+          className="flex flex-col sm:flex-row gap-4"
+        >
           <button
-            className="px-8 py-3 rounded-lg font-semibold text-white transition-all backdrop-blur-md border border-white/20"
+            className="px-8 py-3 rounded-lg font-semibold text-white transition-all backdrop-blur-md border"
             style={{
               fontFamily: 'var(--font-nunito)',
               backgroundColor: 'rgba(77, 106, 138, 0.7)',
               backdropFilter: 'blur(8px)',
+              borderColor: 'rgba(255, 255, 255, 0.3)',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = 'rgba(77, 106, 138, 0.85)';
@@ -42,11 +63,12 @@ export function HeroContent() {
           </button>
 
           <button
-            className="px-8 py-3 rounded-lg font-semibold transition-all backdrop-blur-sm border border-white/30 bg-white/10"
+            className="px-8 py-3 rounded-lg font-semibold transition-all backdrop-blur-sm border bg-white/10"
             style={{
               fontFamily: 'var(--font-nunito)',
               color: 'var(--color-text-primary)',
               backdropFilter: 'blur(4px)',
+              borderColor: 'rgba(255, 255, 255, 0.4)',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
@@ -61,21 +83,25 @@ export function HeroContent() {
           >
             See how it works
           </button>
-        </div>
+        </motion.div>
 
         {/* Supporting Line */}
-        <p
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
           className="text-xs sm:text-sm leading-relaxed max-w-xl px-4"
           style={{
             fontFamily: 'var(--font-nunito)',
             color: 'var(--color-text-muted)',
           }}
         >
-          We're building a new way to support learning — one that listens,
+          We&apos;re building a new way to support learning — one that listens,
           guides, and connects everyone who matters.
-        </p>
+        </motion.p>
       </div>
     </div>
   );
 }
+
 

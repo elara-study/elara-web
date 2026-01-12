@@ -6,28 +6,23 @@ export function Navbar() {
   const navItems: PillNavItem[] = [
     {
       label: 'Home',
-      href: '#',
-      ariaLabel: 'Go to top',
-    },
-    {
-      label: 'Philosophy',
-      href: '#philosophy',
-      ariaLabel: 'Scroll to Philosophy section',
+      href: '/',
+      ariaLabel: 'Go to home page',
     },
     {
       label: 'Students',
-      href: '#student-moment',
-      ariaLabel: 'Scroll to Students section',
+      href: '/students',
+      ariaLabel: 'Go to Students page',
     },
     {
       label: 'Teachers',
-      href: '#teacher-clarity',
-      ariaLabel: 'Scroll to Teachers section',
+      href: '/teachers',
+      ariaLabel: 'Go to Teachers page',
     },
     {
       label: 'Parents',
-      href: '#parent-trust',
-      ariaLabel: 'Scroll to Parents section',
+      href: '/parents',
+      ariaLabel: 'Go to Parents page',
     },
   ];
 
@@ -35,21 +30,21 @@ export function Navbar() {
     <PillNav
       logo={
         <span
-          className="text-lg font-semibold"
+          className="text-xl font-semibold"
           style={{
             fontFamily: 'var(--font-comfortaa)',
-            color: 'var(--pill-bg)',
+            color: '#FFFFFF',
           }}
         >
           elara
         </span>
       }
       items={navItems}
-      className="backdrop-blur-lg bg-white/60 border border-white/30 rounded-2xl shadow-lg px-6"
-      baseColor="rgba(255, 255, 255, 0.6)"
-      pillColor="#0F172A"
-      hoveredPillTextColor="#fff"
-      pillTextColor="rgba(255, 255, 255, 0.9)"
+      className="backdrop-blur-xl bg-gradient-to-r from-[#4D6A8A] to-[#5A7A9A] border border-[#3F5770]/30 rounded-[35px] shadow-xl px-[9px] py-2"
+      baseColor="#4D6A8A"
+      pillColor="#FFFFFF"
+      hoveredPillTextColor="#FFFFFF"
+      pillTextColor="#0F172A"
       ease="power3.easeOut"
       initialLoadAnimation={true}
     />

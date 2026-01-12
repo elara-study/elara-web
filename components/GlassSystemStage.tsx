@@ -41,7 +41,8 @@ export function GlassSystemStage({
 
   return (
     <section
-      className={`bg-glass-surface rounded-3xl border border-white/40 shadow-[0_24px_80px_rgba(15,23,42,0.25)] ${sizePadding[size]} ${className}`}
+      className={`bg-glass-surface rounded-3xl border shadow-[0_24px_80px_rgba(15,23,42,0.25)] ${sizePadding[size]} ${className}`}
+      style={{ borderColor: 'rgba(255, 255, 255, 0.6)' }}
     >
       {(title || subtitle || headerRight) && (
         <header className="mb-6 flex items-start justify-between gap-4">

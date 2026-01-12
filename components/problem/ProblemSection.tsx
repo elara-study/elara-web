@@ -1,115 +1,126 @@
- 'use client';
+'use client';
 
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { VisualAccent } from '@/components/visual/VisualAccent';
-import CardSwap, { Card } from './CardSwap';
 
 export function ProblemSection() {
-  const cardData = [
+  const problems = [
     {
       id: 1,
-      text: "In traditional education, students often move forward even when they're unsure. Questions stay unasked. Confusion stays hidden. Not because students don't care — but because there isn't always space to pause.",
+      title: 'Uncertainty',
+      subtitle: 'Moving Forward',
+      text: "Students often move forward even when they're unsure.",
+      size: 'normal',
     },
     {
       id: 2,
-      text: 'Over time, this silence turns into doubt.',
+      title: 'Silence',
+      subtitle: 'Hidden Questions',
+      text: "Questions stay unasked. Confusion stays hidden.",
+      size: 'normal',
     },
     {
       id: 3,
-      text: 'Confidence fades long before grades reflect it.',
+      title: 'Space',
+      subtitle: 'No Room to Pause',
+      text: "Not because students don't care — but because there isn't always space to pause.",
+      size: 'tall',
     },
     {
       id: 4,
-      text: "Learning doesn't fail loudly.\nIt fades quietly.",
+      title: 'Doubt',
+      subtitle: 'Growing Silence',
+      text: "Over time, this silence turns into doubt.",
+      size: 'wide',
+    },
+    {
+      id: 5,
+      title: 'Confidence',
+      subtitle: 'Fading Away',
+      text: "Confidence fades long before grades reflect it.",
+      size: 'normal',
+    },
+    {
+      id: 6,
+      title: 'Learning',
+      subtitle: 'Quiet Fade',
+      text: "Learning doesn't fail loudly. It fades quietly.",
+      size: 'normal',
     },
   ];
 
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const isInView = useInView(sectionRef, { amount: 0.5 });
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative"
-    >
+    <section id="problem" className="relative py-32 px-6 overflow-hidden">
       <VisualAccent position="left" variant="blob" color="primary" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="space-y-12">
+          {/* Header */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6 }}
+            className="text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] font-semibold leading-tight text-center"
+            style={{
+              fontFamily: 'var(--font-comfortaa)',
+              color: 'var(--color-text-primary)',
+            }}
+          >
+            Most learning struggles go unseen.
+          </motion.h2>
 
-      {/* Pinned-like container so the deck feels anchored while scrolling */}
-      <div className="relative" style={{ minHeight: '180vh' }}>
-        <div
-          className="sticky top-0 h-screen flex flex-col"
-          style={{ paddingTop: '120px', paddingBottom: '80px' }}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 flex-1 flex items-center">
-            {/* Two-column layout: Text on left, Cards on right */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 w-full items-center">
-              {/* Left: Text Content */}
-              <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-center lg:text-left">
-                <h2
-                  className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] font-semibold leading-tight"
-                  style={{
-                    fontFamily: 'var(--font-comfortaa)',
-                    color: 'var(--color-text-primary)',
-                  }}
-                >
-                  Most learning struggles go unseen.
-                </h2>
-                <p
-                  className="text-base sm:text-lg lg:text-xl leading-relaxed"
-                  style={{
-                    fontFamily: 'var(--font-nunito)',
-                    color: 'var(--color-text-secondary)',
-                  }}
-                >
-                  Just look at it go!
-                </p>
-              </div>
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {problems.map((problem, index) => {
+              const sizeClasses = {
+                normal: 'md:col-span-1 md:row-span-1',
+                tall: 'md:col-span-1 md:row-span-2',
+                wide: 'md:col-span-2 md:row-span-1',
+              };
 
-              {/* Right: Card Stack - Large and subtly off to the right */}
-              <div className="relative flex items-center justify-center lg:justify-end overflow-hidden lg:overflow-visible">
-                <div
-                  className="relative translate-x-0 lg:translate-x-6 xl:translate-x-16 scale-75 sm:scale-90 lg:scale-100"
-                  style={{ 
-                    width: 'min(100%, 560px)', 
-                    height: 'min(360px, calc(100vw * 0.64))',
-                    maxWidth: '560px',
-                    maxHeight: '360px',
-                  }}
+              return (
+                <motion.div
+                  key={problem.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`rounded-2xl bg-white/95 border shadow-sm p-6 md:p-8 flex flex-col justify-between backdrop-blur-sm hover:shadow-md transition-shadow ${sizeClasses[problem.size as keyof typeof sizeClasses]}`}
+                  style={{ borderColor: '#E2E8F0' }}
                 >
-                  <CardSwap
-                    width={560}
-                    height={360}
-                    cardDistance={80}
-                    verticalDistance={50}
-                    delay={5000}
-                    skewAmount={0}
-                    easing="linear"
-                    pauseOnHover
-                    isActive={isInView}
+                  <div className="space-y-3">
+                    <h3
+                      className="text-xl md:text-2xl font-semibold"
+                      style={{
+                        fontFamily: 'var(--font-comfortaa)',
+                        color: 'var(--color-text-primary)',
+                      }}
+                    >
+                      {problem.title}
+                    </h3>
+                    <p
+                      className="text-sm md:text-base font-medium"
+                      style={{
+                        fontFamily: 'var(--font-nunito)',
+                        color: 'var(--color-text-muted)',
+                      }}
+                    >
+                      {problem.subtitle}
+                    </p>
+                  </div>
+                  <p
+                    className="text-base md:text-lg leading-relaxed mt-4"
+                    style={{
+                      fontFamily: 'var(--font-nunito)',
+                      color: 'var(--color-text-secondary)',
+                    }}
                   >
-                    {cardData.map((card) => (
-                      <Card
-                        key={card.id}
-                        customClass="bg-black/90 border-white/10 shadow-[0_24px_70px_rgba(15,23,42,0.8)]"
-                      >
-                        <div className="flex h-full w-full items-center justify-center px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8">
-                          <p
-                            className="text-sm sm:text-base lg:text-lg leading-relaxed text-center whitespace-pre-line"
-                            style={{
-                              fontFamily: 'var(--font-nunito)',
-                              color: 'rgba(255,255,255,0.92)',
-                            }}
-                          >
-                            {card.text}
-                          </p>
-                        </div>
-                      </Card>
-                    ))}
-                  </CardSwap>
-                </div>
-              </div>
-            </div>
+                    {problem.text}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

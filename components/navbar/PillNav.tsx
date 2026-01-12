@@ -264,7 +264,7 @@ const PillNav: React.FC<PillNavProps> = ({
     ['--nav-h']: '42px',
     ['--logo']: '36px',
     ['--pill-pad-x']: '18px',
-    ['--pill-gap']: '3px',
+    ['--pill-gap']: '5px',
   } as React.CSSProperties;
 
   const logoHref = items?.[0]?.href || '#';

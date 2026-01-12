@@ -47,11 +47,12 @@ export function ClosingCTASection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              className="px-10 py-4 rounded-lg font-semibold text-white transition-all backdrop-blur-md border border-white/20 text-lg"
+              className="px-10 py-4 rounded-lg font-semibold text-white transition-all backdrop-blur-md border text-lg"
               style={{
                 fontFamily: 'var(--font-nunito)',
                 backgroundColor: 'rgba(77, 106, 138, 0.7)',
                 backdropFilter: 'blur(8px)',
+                borderColor: 'rgba(255, 255, 255, 0.3)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(77, 106, 138, 0.85)';
@@ -66,11 +67,12 @@ export function ClosingCTASection() {
             </button>
 
             <button
-              className="px-10 py-4 rounded-lg font-semibold transition-all backdrop-blur-sm border border-white/30 bg-white/10 text-lg"
+              className="px-10 py-4 rounded-lg font-semibold transition-all backdrop-blur-sm border bg-white/10 text-lg"
               style={{
                 fontFamily: 'var(--font-nunito)',
                 color: 'var(--color-text-primary)',
                 backdropFilter: 'blur(4px)',
+                borderColor: 'rgba(255, 255, 255, 0.4)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';

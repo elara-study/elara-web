@@ -1,12 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { VisualAccent } from '@/components/visual/VisualAccent';
+import { BackgroundFlow } from '@/components/BackgroundFlow';
+import { GlassSystemStage } from '@/components/GlassSystemStage';
 
 export function LearningReportSection() {
   return (
-    <section className="py-24 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-main)' }}>
-      <VisualAccent position="right" variant="circle" color="primary" />
+    <section id="learning-report" className="py-24 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-main)' }}>
+      <BackgroundFlow variant="section" />
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="space-y-12">
           <h2
@@ -19,13 +20,7 @@ export function LearningReportSection() {
             Guidance, not judgment.
           </h2>
 
-          <div
-            className="p-8 rounded-lg"
-            style={{
-              backgroundColor: 'var(--color-background-card)',
-              border: '1px solid var(--color-divider)',
-            }}
-          >
+          <GlassSystemStage size="md" className="p-8">
             <div className="space-y-8">
               <div>
                 <h3
@@ -76,8 +71,18 @@ export function LearningReportSection() {
                     color: 'var(--color-text-secondary)',
                   }}
                 >
-                  From there, it gently explores where support is needed. Not as shortcomings, but as natural steps in the learning journey.
+                  From there, it gently explores where support is needed.<br />
+                  Not as shortcomings, but as natural steps in the learning journey.
                 </motion.p>
+                <p
+                  className="text-base leading-relaxed mt-4"
+                  style={{
+                    fontFamily: 'var(--font-nunito)',
+                    color: 'var(--color-text-secondary)',
+                  }}
+                >
+                  Each report brings together Elara&apos;s insights and the teacher&apos;s perspective, so understanding is never automated or impersonal.
+                </p>
               </div>
 
               <div
@@ -104,7 +109,7 @@ export function LearningReportSection() {
                 </p>
               </div>
             </div>
-          </div>
+          </GlassSystemStage>
 
           <p
             className="text-xl leading-relaxed pt-4"
